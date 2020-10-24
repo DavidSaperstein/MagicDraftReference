@@ -67,3 +67,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # MagicDraftReference
+
+PROJECT ROADMAP
+
+ImageList component breaks on refresh.  Need to cache state.
+Add text link to about me to my github
+Add icon link to corner of page to my github

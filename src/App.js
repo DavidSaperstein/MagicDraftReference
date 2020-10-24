@@ -1,16 +1,18 @@
 import React from 'react'
+import {Link, Switch, Route} from 'react-router-dom'
 import ImageList from './ImageList'
 import SearchForm from './SearchForm'
+import Home from './Home'
 import {SearchContext} from './searchContext'
+import './styles.css'
 
 const App = (props) => {
+  
+  const {inputs} = useContext(SearchContext)
 
   return (
     <>
-    <p>
-
-    </p>
-      {/* <Switch>
+      <Switch>
         <Route exact path='/'>
           <Home />
         </Route>
@@ -19,10 +21,10 @@ const App = (props) => {
           <SearchForm />
         </Route>
 
-        <Route exact path='/reference'>
-          <ImageList />
+        <Route exact path='/cardlist'>
+          <ImageList inputs={inputs}/>
         </Route>
-      </Switch> */}
+      </Switch>
     </>
   )
 }

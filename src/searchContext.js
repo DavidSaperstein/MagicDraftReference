@@ -82,9 +82,15 @@ const SearchContextProvider = (props) => {
   const getCards = (setString, colorString, typeString) => {
     let pathString = `https://api.scryfall.com/cards/search?q=(${setString})`
 
-    if(Object.values(search.colors).filter(boolean => boolean && boolean).length > 0) {
-      pathString = pathString + `(${colorString})`
-    }
+    // if(Object.values(search.colors).filter(boolean => boolean && boolean).length > 0) {
+    //   pathString = pathString + `(${colorString})`
+    // }
+
+    // if(colorString){
+    //   pathString += `(${colorString})`
+    // }
+
+    colorString && ( pathString += `(${colorString})`)
 
     if(Object.values(search.types).filter(boolean => boolean && boolean).length > 0) {
       pathString = pathString + `(${typeString})`

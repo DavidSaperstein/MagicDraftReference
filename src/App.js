@@ -1,5 +1,5 @@
-import React from 'react'
-import {Link, Switch, Route} from 'react-router-dom'
+import React, {useContext} from 'react'
+import {Switch, Route} from 'react-router-dom'
 import ImageList from './ImageList'
 import SearchForm from './SearchForm'
 import Home from './Home'

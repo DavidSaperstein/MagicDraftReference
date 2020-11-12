@@ -36,6 +36,10 @@ form {
   width: 15vw;
   height: 20.95vw;
   margin: 1vw;
+  border-radius: 15px;
+  min-width: 225px;
+  min-height: 314.25px;
+  max-width: 99vw;
 }
 
 .card-container {
@@ -49,14 +53,15 @@ form {
 .nav-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
-  height: 5vh; 
   margin-top: 3vh;
+  margin-bottom: 1vh;
 }
 
 .nav-buttons {
   text-decoration: none;
-  font-size: 2em;
+  font-size: calc(1vw + 1em);
   background-color: #91A8A4;
   border: black solid 1px;
   padding: 0.5vw;

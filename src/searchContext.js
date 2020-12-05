@@ -36,17 +36,17 @@ const SearchContextProvider = (props) => {
   const history = useHistory()
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     if(!isLoaded) {
     axios.get('https://api.magicthegathering.io/v1/sets?type=expansion,core,masters')
       .then (response => {
-        // console.log(response)
         setExpansions(response.data.sets)
       })
       .catch(err => console.error(err))
       setIsLoaded(!isLoaded)
     }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -121,6 +121,7 @@ const SearchContextProvider = (props) => {
 
       getCards(setLiteral, colorLiteral, typeLiteral)
     }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   },[search])
 
   useEffect(() => {

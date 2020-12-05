@@ -36,6 +36,7 @@ const SearchContextProvider = (props) => {
   const history = useHistory()
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     if(!isLoaded) {
     axios.get('https://api.magicthegathering.io/v1/sets?type=expansion,core,masters')
       .then (response => {
@@ -82,13 +83,6 @@ const SearchContextProvider = (props) => {
   const getCards = (setString, colorString, typeString) => {
     let pathString = `https://api.scryfall.com/cards/search?q=(${setString})`
 
-    // if(Object.values(search.colors).filter(boolean => boolean && boolean).length > 0) {
-    //   pathString = pathString + `(${colorString})`
-    // }
-
-    // if(colorString){
-    //   pathString += `(${colorString})`
-    // }
 
     colorString && ( pathString += `(${colorString})`)
 
@@ -98,7 +92,6 @@ const SearchContextProvider = (props) => {
 
     pathString = pathString + `is:booster`
     pathString = pathString + `&order=set`
-    // let newCards = []
     axios.get(pathString)
     .then (response => {
       console.log(response.data)
@@ -106,20 +99,6 @@ const SearchContextProvider = (props) => {
       if(response.data.next_page) {
         setNextPage(response.data.next_page)
       }
-      // newCards = response.data.data
-    //   if(response.data.has_more) {
-    //     setHasMore(true)
-    //   }
-    //   while(hasMore) {
-    //     axios.get(response.data.next_page)
-    //     .then (response => {
-    //       if(!response.data.has_more) {
-    //         setHasMore(false)
-    //       }
-    //       newCards = [...newCards, ...response.data.data]
-    //     })
-    //     .catch (err => console.error(err))
-    //   }
     })
     .catch (err => console.error(err))
     console.log(cards)
@@ -127,6 +106,7 @@ const SearchContextProvider = (props) => {
 
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     if(search.sets.length > 0) {
       const setLiteral = search.sets.reduce((accumulator, set) => {
         if (search.sets.length === 1) {
